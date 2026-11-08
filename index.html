@@ -1,156 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f4eee6">
-<title>STEPHFİNDS — Curated Finds</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8d7e8">
+<meta name="robots" content="noindex, nofollow">
+<title>STEPHFINDS ♡ Y2K finds by Steph</title>
 <style>
-:root{
- --paper:#f4eee6;--cream:#fbf8f3;--ink:#211914;--muted:#786d63;
- --brown:#604532;--mocha:#8a674e;--gold:#ad8a5b;--line:#e3d8ca;
- --dark:#211914;--white:#fffdfa;--shadow:0 16px 44px rgba(61,42,27,.07)
-}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
-a{color:inherit}button,input{font:inherit}
-.promo{background:var(--dark);color:#f8f0e5;text-align:center;padding:13px 18px;font-size:12px;letter-spacing:.12em}
-.promo a{color:#d8bd98;text-decoration:underline;text-underline-offset:3px}
-header{background:rgba(251,248,243,.96);position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
-.head{max-width:1180px;margin:auto;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-family:Georgia,serif;font-size:clamp(23px,4vw,34px);letter-spacing:.16em;text-decoration:none;white-space:nowrap}
-.logo span{color:var(--gold)}
-.headlinks{display:flex;gap:18px;align-items:center}
-.headlinks a{text-decoration:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.menu{display:none;border:1px solid var(--line);background:none;padding:10px 13px}
-.hero{background:var(--paper);border-bottom:1px solid var(--line);overflow:hidden}
-.hero-inner{max-width:1180px;margin:auto;padding:76px 28px 82px;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
-.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.25em;text-transform:uppercase;font-weight:bold}
-h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400}
-h1{font-size:clamp(46px,7vw,84px);line-height:.98;margin:20px 0}
-.hero p{color:var(--muted);font-size:17px;line-height:1.8;max-width:540px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 22px;text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:11px;border:1px solid var(--dark);background:var(--dark);color:white;transition:.2s}
-.btn:hover{background:var(--brown);transform:translateY(-2px)}
-.btn.light{background:transparent;color:var(--ink);border-color:var(--line)}
-.hero-image{min-height:420px;background:linear-gradient(145deg,rgba(38,25,16,.05),rgba(38,25,16,.18)),url('https://images.unsplash.com/photo- autumn?auto=format&fit=crop&w=1200&q=85');background-image:linear-gradient(145deg,rgba(38,25,16,.04),rgba(38,25,16,.16)),url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85');background-size:cover;background-position:center;border-radius:2px;position:relative}
-.hero-image:after{content:"THE AUTUMN EDIT";position:absolute;bottom:20px;left:20px;color:white;letter-spacing:.25em;font-size:10px}
-.wrap{max-width:1180px;margin:auto;padding:72px 28px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:30px}
-.section-head h2{font-size:clamp(32px,4vw,48px);margin:9px 0 0}
-.section-head p{color:var(--muted);margin:0;font-size:13px}
-.filters{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 26px}
-.filter{border:1px solid var(--line);background:transparent;padding:11px 16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
-.filter.active,.filter:hover{background:var(--dark);border-color:var(--dark);color:white}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.product{border:1px solid var(--line);background:white;position:relative;min-width:0}
-.product-art{height:300px;background:linear-gradient(145deg,#e8ddd0,#c9b29c);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.product-art img{width:100%;height:100%;object-fit:cover;display:block}
-.product-art .placeholder{font-family:Georgia,serif;font-size:23px;color:rgba(60,42,29,.62);letter-spacing:.08em}
-.product-info{padding:18px}
-.product-info small{color:var(--gold);letter-spacing:.17em;text-transform:uppercase;font-size:9px}
-.product-info h3{font-size:23px;margin:8px 0}
-.product-info p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
-.note{padding:16px 18px;background:var(--paper);border:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.7;margin-top:22px}
-.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.feature{background:var(--paper);border:1px solid var(--line);padding:38px}
-.feature h2{font-size:34px;margin:14px 0}
-.feature p{color:var(--muted);line-height:1.8;font-size:14px}
-.feature .btn{width:100%;margin-top:14px}
-.affiliate{background:var(--dark);color:#f8f0e5;text-align:center;padding:70px 24px}
-.affiliate h2{font-size:clamp(36px,5vw,58px);margin:12px 0}
-.affiliate p{color:#cbbeb1;line-height:1.8;max-width:600px;margin:0 auto 24px}
-.affiliate .eyebrow{color:#c9a878}
-.affiliate .btn{background:#c3a078;color:#20170f;border-color:#c3a078}
-.code{display:inline-block;border:1px solid #80684f;padding:12px 20px;letter-spacing:.18em;color:#e2c9a8;margin:6px 0 22px;font-size:13px}
-footer{background:#17120f;color:#c9bfb5;padding:55px 28px 28px}
-.foot{max-width:1180px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
-footer .logo{color:#f7f0e8;font-size:25px}
-footer p,footer a{color:#a99d92;font-size:12px;line-height:1.9}
-footer h4{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#d7c4ad}
-footer a{display:block;text-decoration:none}
-.copyright{max-width:1180px;margin:35px auto 0;border-top:1px solid #3b3028;padding-top:20px;font-size:10px;color:#897d73}
-@media(max-width:760px){
- .head{padding:17px 18px}.headlinks{display:none}.menu{display:block}
- .hero-inner{grid-template-columns:1fr;padding:55px 20px;gap:28px}
- .hero-image{min-height:310px}.wrap{padding:55px 18px}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
- .product-art{height:220px}.product-info{padding:13px}
- .feature-grid{grid-template-columns:1fr}.feature{padding:27px}
- .foot{grid-template-columns:1fr 1fr}.foot>div:first-child{grid-column:1/-1}
-}
-@media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.product-art{height:175px}.product-info h3{font-size:19px}.section-head{align-items:start;flex-direction:column}}
+:root{--pink:#f4a9cf;--pink2:#ffd9ec;--hot:#e85aa5;--brown:#4a2738;--choc:#3a202d;--cream:#fff8fb;--paper:#fffdfd;--line:#e9bfd3;--silver:#dce0e8;--muted:#8d7181;--shadow:0 9px 26px #7b36521a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--choc);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#efb8d4 1px,transparent 1px);background-size:25px 25px}a{color:inherit}button,input{font:inherit}button{cursor:pointer}
+.topline{background:var(--choc);color:#ffe7f3;text-align:center;padding:9px 12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.topline a{color:#ffacd3;font-weight:bold;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#fff9fcf2;backdrop-filter:blur(12px);border-bottom:2px solid var(--line)}.head{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-family:Georgia,serif;font-size:clamp(24px,4vw,35px);font-weight:bold;letter-spacing:.11em;text-decoration:none;color:var(--choc);text-shadow:2px 2px 0 var(--pink2)}.brand span{color:var(--hot)}.nav{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.nav a,.nav button{font-size:10px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;border:1px solid var(--line);border-radius:20px;background:white;padding:9px 12px;color:var(--brown)}.nav a:hover,.nav button:hover{background:var(--pink2)}.menu{display:none}
+.hero{max-width:1200px;margin:22px auto;padding:16px 22px}.hero-shell{border:2px solid var(--choc);border-radius:18px;background:linear-gradient(135deg,#ffe8f3 0%,#fff 52%,#eadfea 100%);box-shadow:7px 7px 0 var(--pink);padding:clamp(25px,5vw,60px);display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;position:relative;overflow:hidden}.tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--hot);font-weight:bold}.hero h1{font-family:Georgia,serif;font-size:clamp(44px,7vw,82px);line-height:.95;margin:14px 0;color:var(--choc)}.hero h1 em{color:var(--hot);font-weight:normal}.hero p{max-width:560px;line-height:1.7;color:#765668}.cta{display:inline-block;background:var(--choc);color:white;text-decoration:none;border:2px solid var(--choc);padding:13px 18px;border-radius:8px;font-size:10px;font-weight:bold;letter-spacing:.13em;text-transform:uppercase;margin:8px 8px 0 0;box-shadow:3px 3px 0 var(--pink)}.cta.alt{background:white;color:var(--choc)}.hero-art{min-height:240px;display:grid;place-items:center;position:relative}.window{border:2px solid var(--choc);border-radius:12px;background:#fff;width:min(100%,330px);padding:10px;box-shadow:8px 8px 0 #d98bb8;transform:rotate(2deg)}.windowbar{background:var(--pink);border:1px solid var(--choc);padding:7px 9px;font-size:10px;font-weight:bold;display:flex;justify-content:space-between}.windowbody{padding:15px;text-align:center}.windowbody .big{font-family:Georgia,serif;font-size:32px;color:var(--hot)}.windowbody p{font-size:11px;margin:7px}.spark{position:absolute;color:var(--hot);font-size:28px}.spark.one{top:5px;left:7%}.spark.two{bottom:3px;right:4%}
+.strip{max-width:1156px;margin:0 auto 18px;background:linear-gradient(90deg,var(--pink2),#fff,var(--silver));border:1px solid var(--line);padding:13px;text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brown)}
+main{max-width:1200px;margin:auto;padding:0 22px 55px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:15px;border-bottom:2px dotted var(--line);padding:20px 0 14px;margin:20px 0}.section-title h2{font:normal clamp(30px,4vw,43px) Georgia,serif;margin:5px 0}.eyebrow{font-size:10px;color:var(--hot);font-weight:bold;letter-spacing:.18em;text-transform:uppercase}.sub{font-size:11px;color:var(--muted)}.tools{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:16px 0}.tools input{flex:1;min-width:190px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:white}.filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}.filter{border:1px solid var(--line);border-radius:20px;background:#fff;padding:10px 14px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--brown)}.filter.active,.filter:hover{background:var(--choc);color:#fff;border-color:var(--choc)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.product{background:white;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);min-width:0;position:relative}.art{height:205px;background:linear-gradient(145deg,#fff1f8,#f7e4ee 55%,#f4edf5);display:grid;place-items:center;position:relative;border-bottom:1px solid var(--line)}.art:before{content:'✦';position:absolute;top:13px;left:15px;color:#e78bb8}.art:after{content:'♡';position:absolute;bottom:10px;right:15px;color:#e78bb8;font-size:22px}.cow{width:112px;height:112px}.cow path,.cow circle,.cow ellipse{fill:none;stroke:#e978ad;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.cow .thin{stroke-width:3}.cow .eye{fill:#e978ad;stroke:none}.card-actions{position:absolute;top:10px;right:10px;display:flex;gap:6px}.like{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 10px;color:var(--choc);font-size:11px}.like.liked{background:#ffe0ee;color:#d52e83}.product-info{padding:14px}.product-info small{color:var(--hot);font-size:9px;letter-spacing:.15em;text-transform:uppercase}.product-info h3{font:normal 20px Georgia,serif;margin:7px 0 12px;min-height:44px}.product-info a{display:block;text-decoration:none;text-align:center;background:var(--choc);color:white;padding:11px;border-radius:6px;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.product-info a:hover{background:var(--hot)}.empty{padding:35px;text-align:center;border:1px dashed var(--line);border-radius:12px;background:white;color:var(--muted)}
+.promo-card{background:linear-gradient(120deg,#f7b9d8,#fff0f7,#d9dce7);border:2px solid var(--choc);border-radius:15px;padding:clamp(22px,4vw,40px);text-align:center;margin:45px 0;box-shadow:6px 6px 0 var(--choc)}.promo-card h2{font:normal clamp(32px,5vw,52px) Georgia,serif;margin:10px}.promo-card p{color:#704d61;line-height:1.7}.hipo-mark{display:inline-block;padding:8px 16px;margin:8px auto 4px;border:1px solid var(--choc);border-radius:6px;background-color:#fff0f7;background-image:radial-gradient(ellipse at 30% 40%,#7a493f 0 10%,transparent 12%),radial-gradient(ellipse at 72% 62%,#7a493f 0 9%,transparent 11%),radial-gradient(ellipse at 48% 85%,#b77a91 0 8%,transparent 10%);background-size:38px 30px;color:var(--choc);font-weight:900;letter-spacing:.22em;text-shadow:1px 1px white;font-size:14px}.coupon{display:inline-flex;gap:10px;align-items:center;background:white;border:1px dashed var(--hot);padding:12px 16px;border-radius:8px;font-weight:bold;letter-spacing:.12em;margin:10px}.coupon button{border:0;background:var(--pink2);padding:7px 10px;border-radius:5px;font-size:10px}.socials{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:15px}.socials a{border:1px solid var(--line);background:white;border-radius:20px;padding:10px 15px;text-decoration:none;font-size:11px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}.info{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}.info h3{font:normal 22px Georgia,serif;margin:5px 0}.info p{font-size:12px;color:var(--muted);line-height:1.65}.info a{font-size:11px;color:var(--hot)}footer{background:var(--choc);color:#ffeaf4;padding:35px 22px}footer .foot{max-width:1156px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:22px}footer p,footer a{font-size:11px;line-height:1.7;color:#e8c9d9}footer a{display:block;margin:5px 0}footer h4{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#ffacd3}.legalnote{max-width:1156px;margin:22px auto 0;padding-top:15px;border-top:1px solid #81576d;font-size:10px;color:#d5b6c6;line-height:1.6}
+.modal{display:none;position:fixed;inset:0;background:#180d16aa;z-index:30;padding:20px;overflow:auto}.modal.show{display:grid;place-items:center}.modalbox{background:#fffafd;border:2px solid var(--choc);border-radius:14px;padding:25px;max-width:700px;width:100%;max-height:88vh;overflow:auto;box-shadow:8px 8px 0 var(--pink)}.modalhead{display:flex;justify-content:space-between;gap:15px;align-items:center}.modalhead h2{font:normal 30px Georgia,serif;margin:0}.close{border:0;background:transparent;font-size:25px}.modalbox h3{font-size:18px;margin-bottom:4px}.modalbox p,.modalbox li{font-size:12px;line-height:1.7;color:#705568}.modalbox label{display:block;padding:12px;border:1px solid var(--line);border-radius:8px;margin:9px 0;font-size:12px}.modalbox .cta{cursor:pointer}
+@media(max-width:800px){.head{align-items:flex-start;flex-direction:column}.nav{width:100%}.hero-shell{grid-template-columns:1fr}.hero-art{min-height:180px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.info-grid{grid-template-columns:1fr 1fr}footer .foot{grid-template-columns:1fr 1fr}footer .foot>div:first-child{grid-column:1/-1}}
+@media(max-width:480px){main{padding:0 13px 40px}.hero{padding:12px}.hero-shell{padding:23px}.hero-art{min-height:150px}.window{max-width:260px}.grid{gap:9px}.art{height:150px}.cow{width:88px;height:88px}.product-info{padding:10px}.product-info h3{font-size:17px;min-height:40px}.product-info a{font-size:9px;padding:9px 5px}.info-grid{grid-template-columns:1fr}.section-title{align-items:flex-start;flex-direction:column}.nav a,.nav button{padding:8px 9px;font-size:9px}}
 </style>
 </head>
 <body>
-<div class="promo">AUTUMN PRIVILEGE · <a href="https://m.hipobuy.com/pages/register/index?inviteCode=NZW4T5LKA" target="_blank" rel="noopener">30% RABATT ÜBER MEINEN LINK SICHERN ↗</a></div>
-<header>
- <div class="head">
-  <a class="logo" href="#">STEPH<span>FINDS</span></a>
-  <nav class="headlinks"><a href="#collection">Collection</a><a href="#request">Sourcing</a><a href="#about">About</a><a href="#join">Hipobuy</a></nav>
-  <button class="menu" onclick="document.querySelector('.headlinks').classList.toggle('show')">MENU</button>
- </div>
-</header>
+<div class="topline">♡ STEPHFINDS Y2K DROP · <a href="#join">DEIN HIPOBUY-RABATT HIER ♡</a> · STAY CUTE ✦</div>
+<header><div class="head"><a class="brand" href="#top">STEPH<span>FINDS</span> ♡</a><nav class="nav"><a href="#collection">Alle Fundstücke</a><a href="#winter">Winter / Fall</a><a href="#faves">♡ Merkliste <span id="wishCount">0</span></a><a href="#about">Über STEPHFINDS</a><button onclick="openModal('privacy')">Datenschutz</button></nav></div></header>
+<section class="hero" id="top"><div class="hero-shell"><div><div class="tag">✦ curated finds · by @stephfigur ✦</div><h1>made to find the<br><em>coolest items on the internet ♡</em></h1><a class="cta" href="#collection">♡ Alle Fundstücke entdecken</a><a class="cta alt" href="#join">Hipobuy-Rabatt ↗</a></div><div class="hero-art"><span class="spark one">✧</span><div class="window"><div class="windowbar"><span>stephfinds.exe</span><span>□ ×</span></div><div class="windowbody"><svg class="cow" viewBox="0 0 120 120" aria-label="Pink line-art cow"><path d="M30 38 Q12 18 22 12 Q38 12 43 31 M90 38 Q108 18 98 12 Q82 12 77 31"/><path d="M29 37 Q60 20 91 37 L98 69 Q97 101 60 105 Q23 101 22 69 Z"/><ellipse cx="60" cy="72" rx="27" ry="20"/><ellipse class="eye" cx="49" cy="67" rx="3" ry="4"/><ellipse class="eye" cx="71" cy="67" rx="3" ry="4"/><path d="M51 82 Q60 89 69 82"/><path class="thin" d="M39 47 Q46 40 52 46 M68 46 Q76 40 82 47"/></svg><div class="big">STEPHFINDS</div><p>your cute little link archive ♡</p></div></div><span class="spark two">✦</span></div></div></section>
+<div class="strip">„Dein Style. Deine Entdeckungen. Deine Regeln.“ · <strong>Y2K FOREVER</strong> ♡</div>
 <main>
-<section class="hero">
- <div class="hero-inner">
-  <div>
-   <div class="eyebrow">Curated finds · by @stephfigure</div>
-   <h1>Finds worth<br><em>falling for.</em></h1>
-   <p>Dein persönliches Archive für ausgewählte Fashion-Finds, zeitlose Pieces und besondere Accessoires. Entdecke meine Favoriten – curated with love.</p>
-   <div class="actions"><a class="btn" href="#collection">Collection entdecken ↗</a><a class="btn light" href="#join">30% Hipobuy Deal</a></div>
-  </div>
-  <div class="hero-image" role="img" aria-label="Fashion editorial portrait in warm autumn tones"></div>
- </div>
-</section>
-<section class="wrap" id="collection">
- <div class="section-head"><div><div class="eyebrow">The curated archive</div><h2>The Autumn Collection</h2></div><p>STEPHFİNDS · EDITION 01</p></div>
- <div class="filters" aria-label="Collection categories">
-  <button class="filter active" data-filter="all">All pieces</button><button class="filter" data-filter="bags">Bags</button><button class="filter" data-filter="shoes">Shoes</button><button class="filter" data-filter="accessories">Accessories</button><button class="filter" data-filter="clothing">Clothing</button>
- </div>
- <div class="grid" id="products">
-  <article class="product" data-category="bags"><div class="product-art"><span class="placeholder">YOUR FIND</span></div><div class="product-info"><small>01 · Bags</small><h3>Coming soon</h3><p>Dein nächster Lieblingsfund wird hier verlinkt.</p></div></article>
-  <article class="product" data-category="shoes"><div class="product-art" style="background:linear-gradient(145deg,#d9c8b5,#aa8e75)"><span class="placeholder">YOUR FIND</span></div><div class="product-info"><small>02 · Shoes</small><h3>Coming soon</h3><p>Dein nächster Lieblingsfund wird hier verlinkt.</p></div></article>
-  <article class="product" data-category="accessories"><div class="product-art" style="background:linear-gradient(145deg,#eee5da,#c8b39c)"><span class="placeholder">YOUR FIND</span></div><div class="product-info"><small>03 · Accessories</small><h3>Coming soon</h3><p>Dein nächster Lieblingsfund wird hier verlinkt.</p></div></article>
-  <article class="product" data-category="clothing"><div class="product-art" style="background:linear-gradient(145deg,#d2c0ae,#8d715b)"><span class="placeholder">YOUR FIND</span></div><div class="product-info"><small>04 · Clothing</small><h3>Coming soon</h3><p>Dein nächster Lieblingsfund wird hier verlinkt.</p></div></article>
-  <article class="product" data-category="bags"><div class="product-art" style="background:linear-gradient(145deg,#e8ddd1,#b69b81)"><span class="placeholder">YOUR FIND</span></div><div class="product-info"><small>05 · Bags</small><h3>Coming soon</h3><p>Dein nächster Lieblingsfund wird hier verlinkt.</p></div></article>
-  <article class="product" data-category="accessories"><div class="product-art" style="background:linear-gradient(145deg,#e7d9c8,#b89d80)"><span class="placeholder">YOUR FIND</span></div><div class="product-info"><small>06 · Accessories</small><h3>Coming soon</h3><p>Dein nächster Lieblingsfund wird hier verlinkt.</p></div></article>
- </div>
- <div class="note">Produktbilder und direkte Produktlinks kannst du ergänzen, sobald deine ausgewählten Finds bereit sind. Die Platzhalter sind bewusst noch keine echten Produktangebote.</div>
-</section>
-<section class="wrap" id="request">
- <div class="feature-grid">
-  <div class="feature"><div class="eyebrow">01 · Sourcing request</div><h2>Looking for something?</h2><p>Du hast einen Wunschfund entdeckt? Schick mir ein Foto oder eine Nachricht auf TikTok. Ich schaue, ob ich dir dabei helfen kann, passende Infos zu finden.</p><a class="btn" href="https://www.tiktok.com/@stephfigure" target="_blank" rel="noopener">Auf TikTok anfragen ↗</a></div>
-  <div class="feature" id="about"><div class="eyebrow">02 · About the archive</div><h2>Curated by Steph</h2><p>STEPHFİNDS ist mein persönlicher Fashion- und Finds-Archive. Hier teile ich Inspiration, ausgewählte Kategorien und Links zu externen Angeboten.</p><a class="btn light" href="https://www.tiktok.com/@stephfigure" target="_blank" rel="noopener">Follow @stephfigure ↗</a></div>
- </div>
-</section>
-<section class="affiliate" id="join">
- <div class="eyebrow">Your Hipobuy privilege</div>
- <h2>Find your next favourite.</h2>
- <p>Registriere dich über meinen persönlichen Hipobuy-Link. Laut meinem Creator-Angebot erhältst du damit 30% Rabatt – bitte prüfe die Bedingungen und die Anzeige des Rabatts direkt bei Hipobuy.</p>
- <div class="code">INVITE CODE · NZW4T5LKA</div><br>
- <a class="btn" href="https://m.hipobuy.com/pages/register/index?inviteCode=NZW4T5LKA" target="_blank" rel="noopener">Jetzt bei Hipobuy anmelden ↗</a>
-</section>
+<section id="collection"><div class="section-title"><div><div class="eyebrow">01 · Die Kollektion</div><h2>Alle Fundstücke ♡</h2></div><div class="sub"><span id="totalCount">59</span> ausgewählte Fundstücke · antippen und bei Hipobuy ansehen</div></div>
+<div class="tools"><input id="search" type="search" placeholder="⌕ Fundstück suchen …" aria-label="Produkte suchen"><span class="sub">♡ <span id="shownCount">59</span> angezeigt</span></div>
+<div class="filters" id="filters"><button class="filter active" data-filter="all">Alle Fundstücke</button><button class="filter" data-filter="shoes">Schuhe</button><button class="filter" data-filter="tops">Oberteile & Hosen</button><button class="filter" data-filter="bags">Taschen</button><button class="filter" data-filter="accessories">Accessoires</button><button class="filter" data-filter="winter">Winter / Fall</button><button class="filter" data-filter="archive">Archiv</button><button class="filter" data-filter="favorites">♡ Merkliste</button></div>
+<div class="grid" id="products"></div><div class="empty" id="empty" hidden>Hier ist gerade noch nichts zu sehen. ♡</div>
+<div class="sub" style="margin-top:15px">Hinweis: Die Kuh-Grafik ist ein Platzhalter-Maskottchen. Produktfotos werden bewusst nicht auf dieser Seite angezeigt.</div></section>
+<section id="winter"><div class="section-title"><div><div class="eyebrow">02 · Saison-Auswahl</div><h2>Winter / Fall ❄</h2></div><div class="sub">UGG finds + jackets</div></div><p class="sub">Alle UGG-Funde und Jacken gesammelt an einem Ort. Sie bleiben zusätzlich in ihren ursprünglichen Kategorien sichtbar.</p><button class="filter" onclick="setFilter('winter')">Explore Winter / Fall ♡</button></section>
+<section id="faves"><div class="section-title"><div><div class="eyebrow">03 · Deine gespeicherten Fundstücke</div><h2>Meine Favoriten ♡</h2></div><div class="sub">Deine Merkliste auf diesem Gerät</div></div><div id="favoriteSummary" class="empty">Tippe auf das Herz bei einem Produkt, um es hier zu speichern. ♡</div></section>
+<section class="promo-card" id="join"><div class="eyebrow">✦ STEPHFIGUR · MEIN HIPOBUY-LINK ✦</div><div class="hipo-mark">HIPOBUY</div><h2>Dein kleiner Rabatt-Moment ♡</h2><p>Registriere dich über meinen persönlichen Hipobuy-Link. Dein Rabattcode lautet:</p><div class="coupon"><span id="codeText">STEPHFIGURE18</span><button onclick="copyCode()">COPY CODE</button></div><p><strong>1.–21. November 2026:</strong> 30 % Rabatt<br><strong>Ab 22. November 2026:</strong> 25 % Rabatt<br><small>Rabattbedingungen und Gültigkeit bitte bei Hipobuy prüfen.</small></p><a class="cta" href="https://hipobuy.com/register?inviteCode=NZW4T5LKA" target="_blank" rel="noopener">Mit meinem Link registrieren ↗</a><div class="socials"><a href="https://www.tiktok.com/@stephfigur" target="_blank" rel="noopener">TikTok @stephfigur ↗</a><a href="https://www.instagram.com/steluv.v/" target="_blank" rel="noopener">Instagram @steluv.v ↗</a><a href="mailto:steph.collabs1@gmail.com">Collabs / Email ↗</a></div></section>
+<section id="about"><div class="section-title"><div><div class="eyebrow">04 · about & contact</div><h2>Curated by Steph ♡</h2></div></div><div class="info-grid"><div class="info"><div class="eyebrow">01 · TikTok</div><h3>Follow along</h3><p>Finds, updates and new edits.</p><a href="https://www.tiktok.com/@stephfigur" target="_blank" rel="noopener">@stephfigur ↗</a></div><div class="info"><div class="eyebrow">02 · Instagram</div><h3>Stay connected</h3><p>More daily inspo and updates.</p><a href="https://www.instagram.com/steluv.v/" target="_blank" rel="noopener">@steluv.v ↗</a></div><div class="info"><div class="eyebrow">03 · Collaborations</div><h3>Let's work together</h3><p>For creator and collaboration inquiries.</p><a href="mailto:steph.collabs1@gmail.com">steph.collabs1@gmail.com</a></div></div></section>
+<section id="legal"><div class="section-title"><div><div class="eyebrow">05 · Gut zu wissen</div><h2>Wichtige Informationen ♡</h2></div></div><div class="info-grid"><div class="info"><h3>Impressum</h3><p>STEPHFINDS ist eine redaktionelle Link- und Inspirationsübersicht und kein eigener Onlineshop. Die vollständigen Anbieterangaben müssen vor Veröffentlichung ergänzt und geprüft werden.</p><a href="#" onclick="openModal('imprint');return false">Impressum öffnen ↗</a></div><div class="info"><h3>Datenschutz & Cookies</h3><p>Informationen zu technisch notwendigen Funktionen und lokalen Favoriten-Einstellungen.</p><a href="#" onclick="openModal('privacy');return false">Datenschutz / Cookies öffnen ↗</a></div><div class="info"><h3>Externe Links</h3><p>Produktlinks führen zu Hipobuy oder externen Anbietern. Käufe und deren Abwicklung erfolgen dort.</p><a href="#" onclick="openModal('terms');return false">Nutzungsbedingungen öffnen ↗</a></div></div></section>
 </main>
-<footer>
- <div class="foot">
-  <div><a class="logo" href="#">STEPH<span>FINDS</span></a><p>Curated fashion finds & everyday inspiration.<br>Made by Steph · TikTok @stephfigure</p><a href="https://www.tiktok.com/@stephfigure" target="_blank" rel="noopener">TikTok @stephfigure ↗</a></div>
-  <div><h4>Explore</h4><a href="#collection">The Collection</a><a href="#request">Sourcing Request</a><a href="#join">Hipobuy</a></div>
-  <div><h4>Transparency</h4><p>Einige Links können Affiliate-Links sein. Wenn du darüber einkaufst oder dich registrierst, kann ich eine Provision oder einen Vorteil erhalten. Für dich entstehen dadurch nicht automatisch Mehrkosten.</p></div>
- </div>
- <div class="copyright">© 2026 STEPHFINDS · Unabhängige Inspirations- und Linkübersicht. Hipobuy ist ein externer Anbieter.</div>
-</footer>
+<footer><div class="foot"><div><a class="brand" href="#top" style="color:#fff">STEPH<span>FINDS</span> ♡</a><p>Besondere Fundstücke, mit Liebe ausgewählt.<br>Von @stephfigur</p><a href="mailto:steph.collabs1@gmail.com">Kontakt per E-Mail</a></div><div><h4>Entdecken</h4><a href="#collection">Alle Fundstücke</a><a href="#winter">Winter / Fall</a><a href="#faves">Meine Favoriten</a></div><div><h4>Rechtliches</h4><a href="#legal" onclick="openModal('imprint')">Impressum</a><a href="#legal" onclick="openModal('privacy')">Datenschutz / Cookies</a><a href="#legal" onclick="openModal('terms')">Nutzungsbedingungen</a></div></div><div class="legalnote">STEPHFINDS ist kein eigener Shop. Es werden keine Waren gelagert, verkauft oder versendet. Externe Produktlinks führen zu Hipobuy bzw. den jeweiligen Anbietern; dort gelten deren Bedingungen. Diese Vorlagen ersetzen keine rechtliche Prüfung. © 2026 STEPHFINDS.</div></footer>
+<div class="modal" id="imprint"><div class="modalbox"><div class="modalhead"><h2>Impressum</h2><button class="close" onclick="closeModals()">×</button></div>
+<p><strong>Angaben gemäß § 5 DDG</strong></p>
+<p><strong>STEPHFINDS – Redaktionelle Mode- und Produktübersicht</strong></p>
+<p><strong>Online-Präsenz:</strong> STEPHFINDS</p>
+<p><strong>TikTok:</strong> <a href="https://www.tiktok.com/@stephfigur" target="_blank" rel="noopener noreferrer">@stephfigur</a></p>
+<p><strong>Instagram:</strong> <a href="https://www.instagram.com/steluv.v/" target="_blank" rel="noopener noreferrer">@steluv.v</a></p>
+<p><strong>E-Mail:</strong> <a href="mailto:steph.collabs1@gmail.com">steph.collabs1@gmail.com</a></p>
+<h3>Über STEPHFINDS</h3>
+<p>STEPHFINDS ist eine digitale Mode- und Produktübersicht, die ausgewählte Artikel und Inspirationsideen übersichtlich zusammenstellt.</p>
+<p>Es besteht kein eigenes Ladengeschäft und es erfolgt kein eigener Warenversand. Bestellungen und Käufe werden nicht über STEPHFINDS abgewickelt, sondern über die jeweils verlinkten externen Plattformen und Anbieter.</p>
+<h3>Haftung für externe Links</h3>
+<p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte und technische Abwicklung wir keinen unmittelbaren Einfluss haben.</p>
+<p>Für die Inhalte, Produkte, Bestellungen, Lieferungen und Gewährleistungen der verlinkten Seiten ist grundsätzlich der jeweilige Anbieter verantwortlich.</p>
+<p>Zum Zeitpunkt der Verlinkung waren keine rechtswidrigen Inhalte erkennbar. Bei Bekanntwerden von Rechtsverletzungen werden entsprechende externe Links geprüft und gegebenenfalls entfernt.</p>
+<button class="cta" onclick="closeModals()">Schließen</button></div></div>
+<div class="modal" id="privacy"><div class="modalbox"><div class="modalhead"><h2>Datenschutz & Cookies</h2><button class="close" onclick="closeModals()">×</button></div>
+<p>Diese Website zeigt eine redaktionelle Übersicht mit Links zu externen Webseiten. Beim Anklicken externer Links gelten die Datenschutzinformationen des jeweiligen Anbieters.</p>
+<h3>Lokale Favoriten</h3>
+<p>Die Wishlist speichert deine ausgewählten Favoriten lokal in deinem Browser (localStorage). Diese Favoriten werden nicht an STEPHFINDS übertragen und sind nicht geräteübergreifend sichtbar.</p>
+<h3>Hosting über GitHub Pages</h3>
+<p>Diese Website wird über GitHub Pages, einen Hosting-Dienst von GitHub, bereitgestellt. Beim Aufruf der Website können durch GitHub technische Zugriffsdaten, insbesondere IP-Adressen, im Rahmen des Hostings und der Sicherheit verarbeitet werden. Dabei gelten die Datenschutzbestimmungen von GitHub.</p>
+<h3>Cookies und lokale Speicherung</h3>
+<p>STEPHFINDS verwendet derzeit keine eigenen Analyse- oder Werbe-Cookies. Gespeicherte Favoriten werden lokal im Browser mittels Local Storage gespeichert. Beim Besuch externer Websites können diese eigene Cookies und ähnliche Technologien einsetzen.</p>
+<button class="cta" onclick="closeModals()">Schließen</button></div></div>
+<div class="modal" id="terms"><div class="modalbox"><div class="modalhead"><h2>Nutzung & externe Links</h2><button class="close" onclick="closeModals()">×</button></div><h3>Kein eigener Verkauf</h3><p>STEPHFINDS stellt ausgewählte Produkte und externe Links als kostenlose Inspirations- und Übersichtsseite dar. Es werden keine Waren durch STEPHFINDS verkauft, gelagert, versendet oder Bestellungen abgewickelt.</p><h3>Externe Anbieter</h3><p>Wenn du einen Produktlink anklickst, wirst du zu Hipobuy oder einer anderen externen Plattform weitergeleitet. Kaufvertrag, Zahlung, Versand, Rückgabe, Produktqualität und Kundenservice liegen beim jeweiligen Anbieter und richten sich nach dessen Bedingungen.</p><button class="cta" onclick="closeModals()">Schließen</button></div></div>
 <script>
-document.querySelectorAll('.filter').forEach(button=>{
- button.addEventListener('click',()=>{
-  document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
-  button.classList.add('active');
-  const selected=button.dataset.filter;
-  document.querySelectorAll('.product').forEach(card=>{
-   card.style.display=(selected==='all'||card.dataset.category===selected)?'block':'none';
-  });
- });
-});
+const products = [
+{n:'Jeremy Scott x Adidas Shoes',c:'shoes',u:'https://hipobuy.cn/c8TJZqDG'},
+{n:'Chanel Boots',c:'shoes',u:'https://hipobuy.cn/PJizZPVp'},
+{n:'Asics Gel Kayano 14 Sneaker',c:'shoes',u:'https://hipobuy.cn/1fsVWK1f'},
+{n:'Chanel Ballerina',c:'shoes',u:'https://hipobuy.cn/4IYK4T2D'},
+{n:'Chanel Leather Sneakers Trainers',c:'shoes',u:'https://hipobuy.cn/Ozm9ZlbV'},
+{n:'Vans Knu School x Bape',c:'shoes',u:'https://hipobuy.cn/biQzrQEn'},
+{n:'Rick Owens Geobasket Python',c:'shoes',u:'https://hipobuy.cn/Sm64NeSz'},
+{n:'UGG Lowmel Sneaker',c:'shoes',w:1,u:'https://hipobuy.cn/ObiMHc9a'},
+{n:'UGG x Chrome Hearts',c:'shoes',w:1,u:'https://hipobuy.cn/8i0cHkb4'},
+{n:'UGG Tall Boots Y2K',c:'shoes',w:1,u:'https://hipobuy.cn/aQBnPrfk'},
+{n:'UGG Standard Mini',c:'shoes',w:1,u:'https://hipobuy.cn/FLCFWzHw'},
+{n:'UGG Tasman Slipper',c:'shoes',w:1,u:'https://hipobuy.cn/DRuNpiqf'},
+{n:'Rick Owens Geobaskets',c:'shoes',u:'https://hipobuy.cn/jEjdzydu'},
+{n:'New Balance',c:'shoes',u:'https://hipobuy.cn/4FmMg1Tk'},
+{n:'Balenciaga Slides Slipper',c:'shoes',u:'https://hipobuy.cn/R6EWjB1r'},
+{n:'Balenciaga Runner',c:'shoes',u:'https://hipobuy.cn/4V2Ji3HB'},
+{n:'New Rock Boots',c:'shoes',u:'https://hipobuy.cn/55AT7bJR'},
+{n:'Bottega Veneta',c:'shoes',u:'https://hipobuy.cn/QViMGNG5'},
+{n:'YSL Heels',c:'shoes',u:'https://hipobuy.cn/v25U5ooV'},
+{n:'Christian Louboutin',c:'shoes',u:'https://hipobuy.cn/9tF2IGqX'},
+{n:'Red Bottom Heels',c:'shoes',u:'https://hipobuy.cn/xPgco1BX'},
+{n:'Louboutin Slipper',c:'shoes',u:'https://hipobuy.cn/YNuxuS1C'},
+{n:'Chrome Hearts V-neck T-shirt',c:'tops',u:'https://hipobuy.cn/EQ78W9Bk'},
+{n:'Chrome Hearts Long Sleeve',c:'tops',u:'https://hipobuy.cn/t4qwTqCO'},
+{n:'Miu Miu Top',c:'tops',u:'https://hipobuy.cn/BW93SmVc'},
+{n:'New Jeans Bape Star Set',c:'tops',u:'https://hipobuy.cn/MIhkpjFd'},
+{n:'Bape Star Shirt',c:'tops',u:'https://hipobuy.cn/hPXPqXU4'},
+{n:'Chrome Hearts Tank Top',c:'tops',u:'https://hipobuy.cn/qnWXH9t2'},
+{n:'All Chrome Hearts Long Sleeve Male',c:'tops',u:'https://hipobuy.cn/aiGmGcLA'},
+{n:'Evisu Jeans',c:'tops',u:'https://hipobuy.cn/oGLZ9VqI'},
+{n:'True Religion Jeans',c:'tops',u:'https://hipobuy.cn/JmSrLyLH'},
+{n:'Nike Tech',c:'tops',u:'https://hipobuy.cn/LozrRAwJ'},
+{n:'Nike Puffer / Moncler Windbreaker',c:'tops',w:1,u:'https://hipobuy.cn/TJWzS7Fs'},
+{n:'Teddy Ralph Lauren',c:'tops',u:'https://hipobuy.cn/Ay8Qn0N1'},
+{n:'Ralph Lauren Sweater',c:'tops',u:'https://hipobuy.cn/Pm1BbUkx'},
+{n:'Purple Pants',c:'tops',u:'https://hipobuy.cn/RmCOt2XI'},
+{n:'Ralph Lauren Top',c:'tops',u:'https://hipobuy.cn/YDQtg9uw'},
+{n:'Nike Backpack',c:'bags',u:'https://hipobuy.cn/DpZps35v'},
+{n:'MCM Backpack',c:'bags',u:'https://hipobuy.cn/YNcbd4gh'},
+{n:'Supreme Backpack',c:'bags',u:'https://hipobuy.cn/VVPt7yTH'},
+{n:'Chanel Small Leather Handbag',c:'bags',u:'https://hipobuy.cn/gpfDR6cH'},
+{n:'Chanel Cambon Leather Handbag Vintage',c:'bags',u:'https://hipobuy.cn/N9KaWIS9'},
+{n:'Vintage Chanel Large Tote Bag',c:'bags',u:'https://hipobuy.cn/ZSfN7pwK'},
+{n:'Goyard Backpack',c:'bags',u:'https://hipobuy.cn/GOZLxnMz'},
+{n:'Chanel Handbag',c:'bags',u:'https://hipobuy.cn/exYYrBEk'},
+{n:'Chanel Bangle',c:'accessories',u:'https://hipobuy.cn/i5ySBtXB'},
+{n:'Goyard Cardholder',c:'accessories',u:'https://hipobuy.cn/CmeG6O49'},
+{n:'Miu Miu Cardholder',c:'accessories',u:'https://hipobuy.cn/sZRH6nY2'},
+{n:'Chrome Glasses',c:'accessories',u:'https://hipobuy.cn/czDLsGUX'},
+{n:'Chrome Hearts Colorful Necklace',c:'accessories',u:'https://hipobuy.cn/1Xh39rpm'},
+{n:'Chrome Hearts Metal Necklace',c:'accessories',u:'https://hipobuy.cn/fusLghLR'},
+{n:'Apple Watch',c:'accessories',u:'https://hipobuy.cn/65QgDf9n'},
+{n:'Chrome Hearts Belt',c:'accessories',u:'https://hipobuy.cn/EMHWKypn'},
+{n:'Apple Phone Case',c:'accessories',u:'https://hipobuy.cn/yukR5fys'},
+{n:'Apple Pencil',c:'accessories',u:'https://hipobuy.cn/MzqP1pHB'},
+{n:'AirPods',c:'accessories',u:'https://hipobuy.cn/ktuxVTvr'},
+{n:'My Melody Rug',c:'accessories',u:'https://hipobuy.cn/doWWxwxQ'},
+{n:'Nike Socks',c:'accessories',u:'https://hipobuy.cn/Cq7cVTZj'},
+{n:'Bape Socks',c:'accessories',u:'https://hipobuy.cn/bUzAUwM0'}
+];
+let filter='all', query='';let favorites=new Set();try{favorites=new Set(JSON.parse(localStorage.getItem('stephfinds-favorites')||'[]'))}catch(e){}
+const cow=`<svg class="cow" viewBox="0 0 120 120" aria-label="Pink line-art cow"><path d="M30 38 Q12 18 22 12 Q38 12 43 31 M90 38 Q108 18 98 12 Q82 12 77 31"/><path d="M29 37 Q60 20 91 37 L98 69 Q97 101 60 105 Q23 101 22 69 Z"/><ellipse cx="60" cy="72" rx="27" ry="20"/><ellipse class="eye" cx="49" cy="67" rx="3" ry="4"/><ellipse class="eye" cx="71" cy="67" rx="3" ry="4"/><path d="M51 82 Q60 89 69 82"/><path class="thin" d="M39 47 Q46 40 52 46 M68 46 Q76 40 82 47"/></svg>`;
+function visible(p){if(filter==='winter'&&!p.w)return false;if(filter==='favorites'&&!favorites.has(p.u))return false;if(['shoes','tops','bags','accessories'].includes(filter)&&p.c!==filter)return false;if(filter==='archive')return false;if(query&&!p.n.toLowerCase().includes(query))return false;return true}
+function card(p){let liked=favorites.has(p.u);return `<article class="product"><div class="art">${cow}<div class="card-actions"><button class="like ${liked?'liked':''}" aria-label="${liked?'Aus Favoriten entfernen':'Zu Favoriten hinzufügen'}" onclick="toggleFavorite('${p.u}')">${liked?'♥':'♡'} <span>${liked?1:0}</span></button></div></div><div class="product-info"><small>${p.c==='tops'?'TOPS & BOTTOMS':p.c.toUpperCase()}${p.w?' · WINTER / FALL':''}</small><h3>${p.n}</h3><a href="${p.u}" target="_blank" rel="noopener noreferrer">View on Hipobuy ↗</a></div></article>`}
+function render(){let shown=products.filter(visible);document.getElementById('products').innerHTML=shown.map(card).join('');document.getElementById('empty').hidden=shown.length!==0;document.getElementById('shownCount').textContent=shown.length;document.getElementById('wishCount').textContent=favorites.size;document.getElementById('favoriteSummary').innerHTML=favorites.size?`<p>${favorites.size} Favorit(en) auf diesem Gerät gespeichert. Wähle oben „♡ Favorites“, um sie anzusehen.</p>`:'Tippe auf das Herz bei einem Produkt, um es hier zu speichern. ♡';document.getElementById('totalCount').textContent=products.length}
+function setFilter(f){filter=f;document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter===f));render();document.getElementById('collection').scrollIntoView({behavior:'smooth'})}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.filter)));document.getElementById('search').addEventListener('input',e=>{query=e.target.value.toLowerCase().trim();render()});
+function toggleFavorite(url){if(favorites.has(url))favorites.delete(url);else favorites.add(url);localStorage.setItem('stephfinds-favorites',JSON.stringify([...favorites]));render()}
+function copyCode(){navigator.clipboard?.writeText('STEPHFIGURE18').then(()=>alert('Code kopiert: STEPHFIGURE18')).catch(()=>alert('Dein Code: STEPHFIGURE18'))}
+function openModal(id){document.getElementById(id).classList.add('show')}function closeModals(){document.querySelectorAll('.modal').forEach(m=>m.classList.remove('show'))}document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModals()}));
+render();
 </script>
-</body>
-</html>
+</body></html>
